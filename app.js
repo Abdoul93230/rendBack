@@ -41,13 +41,19 @@ app.post("/verification", (req, res) => {
     const codeInfo = codes.find((row) => row.Token === code);
     // console.log(codes);
 
-    if (codeInfo && codeInfo.Valide === `False\r`) {
+    if (
+      codeInfo &&
+      (codeInfo.Valide === `False` || codeInfo.Valide === `False\r`)
+    ) {
       return res
         .status(401)
         .json({ error: "Ce code a deja ete utilise. Accès refusé." });
     }
 
-    if (codeInfo && codeInfo.Valide === `True\r`) {
+    if (
+      codeInfo &&
+      (codeInfo.Valide === `True` || codeInfo.Valide === `True\r`)
+    ) {
       // Mettre à jour l'attribut 'Valide' à false
       codeInfo.Valide = `False\r`;
 
