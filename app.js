@@ -74,7 +74,7 @@ app.post("/verification", (req, res) => {
       });
     } else {
       // Notifier que le code est invalide
-      res.status(401).json({ error: "Code invalide", codes, codeInfo });
+      res.status(401).json({ error: "Code invalide" });
     }
   });
 });
