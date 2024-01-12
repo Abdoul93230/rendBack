@@ -85,5 +85,5 @@ app.get("/", (req, res) => {
 
 // Démarrer le serveur sur le port spécifié
 app.listen(port, () => {
-  console.log(`Serveur backend démarré sur le port ${port}`);
+  console.log(`Serveur backend démarre sur le port ${port}`);
 });
